@@ -51,7 +51,7 @@ class BestCustomers extends AbstractExport
             ])
             ->withColumn(AddressTableMap::COL_CELLPHONE, 'cellphone')
             ->withColumn(AddressTableMap::COL_PHONE, 'phone')
-            ->withColumn('SUM(order_product.price)', 'order_sum')
+            ->withColumn('SUM(Case when order_product.was_in_promo = 0 Then order_product.price Else order_product.promo_price)', 'order_sum')
             ->where("order.status_id IN (2,3,4) AND address.is_default = 1")
             ->orderBy('order_sum',Criteria::DESC)
             ->groupBy(CustomerTableMap::COL_ID)
