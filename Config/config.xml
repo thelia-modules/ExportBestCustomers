@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <exports>
+        <export id="thelia.export.customer.bestcustomers" category_id="thelia.export.customer" class="ExportBestCustomers\Export\BestCustomers">
+            <export_descriptive locale="fr_FR">
+                <title>Meilleurs clients</title>
+                <description>Exporter les informations de vos 100 meilleurs clients</description>
+            </export_descriptive>
+            <export_descriptive locale="en_US">
+                <title>Best customers</title>
+                <description>Export information on your 100 best customers</description>
+            </export_descriptive>
+        </export>
+    </exports>
+</config>
