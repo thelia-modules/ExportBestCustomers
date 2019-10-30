@@ -52,7 +52,7 @@ class BestCustomers extends AbstractExport
             ->withColumn(AddressTableMap::COL_CELLPHONE, 'cellphone')
             ->withColumn(AddressTableMap::COL_PHONE, 'phone')
             ->withColumn('SUM(order_product.price)', 'order_sum')
-            ->where("order.status_id IN (2,3,4)")
+            ->where("order.status_id IN (2,3,4) AND address.is_default = 1")
             ->orderBy('order_sum',Criteria::DESC)
             ->groupBy(CustomerTableMap::COL_ID)
             ->limit(100)
